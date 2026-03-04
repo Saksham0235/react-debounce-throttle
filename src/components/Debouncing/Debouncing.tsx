@@ -3,10 +3,9 @@ import React,{useEffect, useState} from 'react'
 
 const Debouncing = () => {
     const [val,setVal]=useState("")
-    const [query, setQuery] = useState("");
     useEffect(()=>{
         const timer=setTimeout(() => {
-            setQuery(val);
+           fetch(`https://jsonplaceholder.typicode.com/users?name=${val}`)
             console.log("Searching In Debouncing ",val)
         }, 500);
 
